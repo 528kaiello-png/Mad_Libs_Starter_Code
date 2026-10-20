@@ -36,3 +36,6 @@
 
 // FINAL: Add at least three meaningful comments describing your code.
 // TEST: Try TWO sets of answers and check the browser console for errors.
+
+let animal = prompt("Enter an animal:");
+let age = Number(prompt("Enter an age:"));
