@@ -43,7 +43,7 @@ const power = age ** count; //exponents or Power
 // PART 5 — STORY (TEMPLATE LITERAL)
 // TODO: Build one original story with BACKTICKS and ${variableName}.
 // TODO: Include ALL eight prompt responses, plus at least two math results.
-let story = `Once upon a time, a ${age}-year old ${adjective1} ${animal} lived at ${place} as they sat comfortably at this place it loved to go and live in was ${verb} its lifestyle was incredibly ${adjective2} it loved to eat ${count} lbs of ${food} every day its power level is ${power} meaning it could easily survive for ${sum} years!`;
+let story = `${message} Once upon a time, a ${age}-year old ${adjective1} ${animal} lived at ${place} as they sat comfortably at this place it loved to go and live in was ${verb} its lifestyle was incredibly ${adjective2} it loved to eat ${count} lbs of ${food} every day its power level is ${power} meaning it could easily survive for ${sum} years!`;
 // PART 6 — DISPLAY ON THE WEBPAGE
 // TODO: Uncomment and complete the line below once your story variable exists.
 document.getElementById("madlib-output").innerHTML = story;
