@@ -10,7 +10,7 @@
 const  place = prompt ("enter a place")
 const adjective1 = prompt ("add an adjective")
 const adjective2 = prompt ("add another adjective")
-const verb = prompt ("enter an action verb")
+const verb = prompt ("enter an action verb (that is present tense)")
 const food = prompt ("enter a food")
 
 
