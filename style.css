@@ -17,3 +17,17 @@ body { background-color: rgb(2, 133, 111); }
   transform: translateY(-8px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
+.footer{
+background-color: rgb(9, 214, 180);
+padding: 20px
+}
+.my-custom-header{
+background-color: rgb(9, 214, 180);
+
+}
+.page-container{
+display: grid;
+grid-template-rows: auto 1fr auto;
+ min-height: 100vh;
+}
+
