@@ -19,7 +19,7 @@ body { background-color: rgb(2, 133, 111); }
 }
 .footer{
 background-color: rgb(9, 214, 180);
-padding: 20px
+padding: 50px
 }
 .my-custom-header{
 background-color: rgb(9, 214, 180);
@@ -28,6 +28,7 @@ background-color: rgb(9, 214, 180);
 .page-container{
 display: grid;
 grid-template-rows: auto 1fr auto;
- min-height: 100vh;
+   min-height: 100vh;
+   /* I put this this here to be able to allow the footer to stay at the bottom of the page*/
 }
 
