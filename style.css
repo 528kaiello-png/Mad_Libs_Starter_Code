@@ -1,7 +1,25 @@
 /* Customize this design to match your story. Keep the responsive Bootstrap layout. */
-body { background-color: rgb(2, 133, 111); }
+body { 
+  background-color: rgb(2, 133, 111); 
+}
 
-.story-output { min-height: 8rem; line-height: 1.7; white-space: normal; }
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  /* Allows the footer to stay at the bottom of the page */
+}
+
+.my-custom-header {
+  background-color: rgb(9, 214, 180);
+}
+
+.story-output { 
+  min-height: 8rem; 
+  line-height: 1.7; 
+  white-space: normal; 
+}
+
 .card { 
   border-radius: 1rem; 
   display: inline-block;
@@ -9,26 +27,104 @@ body { background-color: rgb(2, 133, 111); }
   border: none;
   font-size: 16px;
   cursor: pointer;
-  /* Added missing colon and removed spaces */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
-.footer{
-background-color: rgb(9, 214, 180);
-padding: 50px
-}
-.my-custom-header{
-background-color: rgb(9, 214, 180);
 
-}
-.page-container{
-display: grid;
-grid-template-rows: auto 1fr auto;
-   min-height: 100vh;
-   /* I put this this here to be able to allow the footer to stay at the bottom of the page*/
+.footer {
+  background-color: rgb(9, 214, 180);
+  padding: 50px;
 }
 
+/* Falling background shapes animation wrapper */
+.bg-shape-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden; /* Prevents unwanted scrollbars */
+  z-index: 0;
+}
+
+/* Base shape styles */
+.bg-shape {
+  position: absolute;
+  top: -100px; /* Starts above top of viewport */
+  background-color: rgba(255, 255, 255, 0.18); /* Translucent white shape color */
+  animation-name: fallAndSpin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Shape styles */
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 4px;
+}
+
+/* Sizes for the squares and circles */
+.size-sm { width: 30px; height: 30px; }
+.size-md { width: 50px; height: 50px; }
+.size-lg { width: 75px; height: 75px; }
+
+
+.triangle {
+  background-color: transparent !important; /* Triangles use borders for fill */
+  width: 0 !important;
+  height: 0 !important;
+  border-style: solid;
+  border-color: transparent transparent rgba(139, 197, 255, 0.519) transparent;
+}
+
+.triangle.size-sm {
+  border-width: 0 15px 30px 15px;
+}
+
+.triangle.size-md {
+  border-width: 0 25px 50px 25px;
+}
+
+.triangle.size-lg {
+  border-width: 0 38px 75px 38px;
+}
+
+/* Animation Speeds */
+.speed-fast { animation-duration: 6s; }
+.speed-normal { animation-duration: 10s; }
+.speed-slow { animation-duration: 15s; }
+
+/* Horizontal Positions & Delays */
+.pos-1 { left: 10%; animation-delay: 0s; }
+.pos-2 { left: 25%; animation-delay: 3s; }
+.pos-3 { left: 40%; animation-delay: 1s; }
+.pos-4 { left: 60%; animation-delay: 5s; }
+.pos-5 { left: 75%; animation-delay: 2s; }
+.pos-6 { left: 90%; animation-delay: 7s; }
+
+/* Fixed Keyframes Animation */
+@keyframes fallAndSpin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1; /* Softly fade into view */
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(115vh) rotate(360deg); /* Fall past bottom */
+    opacity: 0;
+  }
+}
